@@ -61,7 +61,7 @@ Gateway:           10.0.0.1
 DNS:               8.8.8.8
 ```
 
-# 🐛 Difficulties Faced and Solutions
+# Difficulties Faced and Solutions
 
 During the lab setup, I encountered several configuration and connectivity issues.
 
