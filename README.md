@@ -247,7 +247,9 @@ IP: 10.0.0.9
 Prefix: /24
 Gateway: 10.0.0.1
 ---
+
 ## Tools and References
+
 Oracle VirtualBox
 Kali Linux
 Android-x86
