@@ -17,16 +17,12 @@ The lab uses a custom **VirtualBox NAT Network** so that the virtual machines ca
 
 ### Objectives
 
-- Build a basic cybersecurity lab using VirtualBox.
-- Install and configure Kali Linux, Windows 10, and Android 9.
-- Create a custom NAT Network.
-- Configure static IP addresses.
-- Establish communication between virtual machines.
-- Perform gateway and VM-to-VM connectivity tests.
+- Set up multiple virtual machines using VirtualBox.
+- Configure a shared NAT Network.
+- Configure IP addresses for the VMs.
+- Test communication between all machines.
 - Troubleshoot network connectivity issues.
-- Take snapshots of the working virtual machines.
-- Create a reusable environment for future cybersecurity experiments.
-
+- Take snapshots of the working VMs.
 ---
 
 # Lab Environment Details
@@ -214,14 +210,60 @@ Correct IP configuration does not automatically guarantee connectivity between s
 
 Firewall rules can prevent ICMP traffic even when both systems are connected to the same network.
 ---
+## Kali Linux
 
+Kali Linux was configured with:
+
+- IP: `10.0.0.2`
+- Gateway: `10.0.0.1`
+- DNS: `8.8.8.8`
+
+Network configuration was checked using:
+
+```bash
+ip a
+nmcli device status
+ip route
+```
+---
+## Windows 10
+Windows 10 was configured with:
+IP: 10.0.0.10
+Subnet Mask: 255.255.255.0
+Gateway: 10.0.0.1
+DNS: 8.8.8.8
+
+Configuration was verified using:
+
+<pre>ipconfig</pre>
+---
+
+## Android 9
+Android-x86 9.0-r2 was installed and connected to the same NAT Network.
+
+Network configuration:
+
+IP: 10.0.0.9
+Prefix: /24
+Gateway: 10.0.0.1
+---
+## Tools and References
+Oracle VirtualBox
+Kali Linux
+Android-x86
+Windows 10
+---
 # What I Learned This Week
 
 This lab provided practical experience with virtualization, networking, and troubleshooting.
-
-## Virtualization
-
-- Learned how to create and configure virtual machines using VirtualBox.
-- Learned how ISO files and virtual hard disks are used during VM installation.
-- Understood how multiple operating systems can run on a single physical machine.
-- Learned how virtual network adapters connect VMs to virtual networks.
+-Learned how to create and configure VMs using VirtualBox.
+-Learned the difference between NAT and NAT Network.
+-Learned how multiple VMs communicate through a shared virtual network.
+-Practiced configuring and verifying IP addresses.
+-Used ip, nmcli, ipconfig, and ping for network troubleshooting.
+-Learned how firewall settings can affect network connectivity.
+-Learned how to troubleshoot a network systematically instead of changing settings randomly.
+-Gained practical experience working with Kali Linux, Windows, and Android in the same virtual environment.
+---
+## Author
+Rachel Debbarma
